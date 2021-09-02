@@ -1,10 +1,10 @@
-Operating Systems
+# Operating Systems
 Professor - Vibha Gaur
 Semester - 3rd
 
-25th August 2021
-Ed, LS, CAT, RM, PWD, MKDIR, CD, LS -L, WHO, WHO AM I, MV, CP, PIPE, RMDIR, CD.., CD\
+1. 25th August 2021
+    Ed, LS, CAT, RM, PWD, MKDIR, CD, LS -L, WHO, WHO AM I, MV, CP, PIPE, RMDIR, CD.., CD\
 
 28th July 2021
-1.Wap to display kernel version, cpu type and model.
-2. Wap to display information on configured memory,  amount of free and used memory.
+    i. WAP to display kernel version, cpu type and model.
+    ii. WAP to display information on configured memory,  amount of free and used memory.
