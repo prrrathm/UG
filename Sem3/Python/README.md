@@ -27,5 +27,5 @@ Semester - 3rd
         4. WorkHard:Sales<40000
     3. Write a Python function to find the nth term of Fibonacci sequence and its factorial. Return the result as a list.
     4. Write a function that takes a number (>=10)as an input and return the digits of the number as a set.
-    5. Write a function that finds the sum of the n terms of the following series.Import the factorial function created in question 4. 
+    5. Write a function that finds the sum of the n terms of the following series.Import the factorial function created in question 4.
         1. 1–x2/2!+x4/4!–x6/6!+...xn/n!

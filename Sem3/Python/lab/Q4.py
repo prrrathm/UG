@@ -1,15 +1,11 @@
 def num2set(number) :
-    digitset = {number%10}
-    number = number % 10
-    print(number%10)
+    numstr = str(number)
+    digitset = {int(numstr[0])}
+    
+    for i in numstr :
+        digitset.add(int(i))
 
-    while(number > 10) :
-        # digitset.add(number%10)
-        number = number % 10
-        # print(number)
-
-    # digitset.reverse()
     return digitset
 
-n = int(input('\nnumber : '))
-print(num2set(n), end='\n\n')
+n = int(input('number : '))
+print('Digits of number in a set : ',num2set(n), end='\n\n')
