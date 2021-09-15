@@ -2,6 +2,8 @@
 #include <random>
 #include <time.h>
 using namespace std;
+void displayll(node* head);
+// void insertAfter(node* &head, int value);
 
 class node{
     public :
@@ -12,7 +14,7 @@ class node{
         }
 };
 
-void displayll(node* head){
+// void displayll(node* head){
     while(head != NULL){
         cout << head->data << "->";
         head = head->next;
@@ -98,11 +100,15 @@ void deletell(node* &head, int key){
         return;
     
     node* temp = head;
-    while(key--){
+    key--;
+    while(--key){
         temp = temp->next;
-        cout << key << endl;
     }
-        
+    node* temp2 = temp->next;
+    temp->next = temp->next->next;
+    cout << temp->data << endl;
+    delete temp2;
+
 }
 
 bool searchll(node* head, int key){
@@ -127,9 +133,10 @@ int main(){
 
     deleteBegin(head);
     deleteEnd(head);
-    deletell(head,4);
     displayll(head);
 
-    cout << searchll(head, 5);
+    deletell(head,3);
+    displayll(head);
+
     return 0;
 }
