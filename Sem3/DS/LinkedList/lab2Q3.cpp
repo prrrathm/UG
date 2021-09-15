@@ -43,25 +43,25 @@ void insertAfter(node* &head, int value){
     temp->next = n;
 }
 
-// void randomInsert(node* &head, int value){
-//     node* n = new node(value);
-//     if (head == NULL){
-//         head = n;
-//         return;
-//     }
+void randomInsert(node* &head, int value){
+    node* n = new node(value);
+    if (head == NULL){
+        head = n;
+        return;
+    }
     
-//     int pos = 1;
-//     node* temp = head;
-//     while(--pos){
-//         temp = temp->next;
-//     }
+    int pos = 1;
+    node* temp = head;
+    while(--pos){
+        temp = temp->next;
+    }
 
-//     node* temp2 = temp;
-//     temp = n;
-//     cout << temp->data << endl;
-//     cout << temp2->data << endl;
-//     temp2->next = temp;
-// }
+    node* temp2 = temp;
+    temp = n;
+    cout << temp->data << endl;
+    cout << temp2->data << endl;
+    temp2->next = temp;
+}
 
 int main(){
     node *a;
@@ -69,8 +69,8 @@ int main(){
     insertAfter(a,1);
     insertBefore(a,0);
     displayll(a);
-
+    cout<< a->data;
     // randomInsert(a,4);
-    displayll(a);
+    // displayll(a);
     return 0;
 }
