@@ -69,6 +69,32 @@ void insertRandom(node* &head, int value){
 
 }
 
+void deleteBegin(node* &head){
+    if(head == NULL){
+        cout << "List Empty" << endl;
+        return;
+    }
+    node* temp = head;
+    head = head->next;
+    delete temp;
+}
+
+void deleteEnd(node* &head){
+    if (head == NULL){
+        cout << "List Empty" ;
+        return;
+    }
+
+    node* temp = head;
+    while(temp->next->next != NULL){
+        temp = temp->next;
+    }
+    
+    // cout << temp->data << endl;
+    temp->next = NULL;
+
+}
+
 int main(){
     node* head;
     insertAfter(head, 1);
@@ -77,7 +103,10 @@ int main(){
     insertAfter(head, 6);
     insertBefore(head, 0);
     insertRandom(head, 5);
+    displayll(head);
 
+    deleteBegin(head);
+    deleteEnd(head);
     displayll(head);
     return 0;
 }
