@@ -12,8 +12,114 @@ class node{
         }
 };
 
-// void displayll(node* head);
-// void insertAfter(node* &head, int value);
+void displayll(node* head);
+void insertAfter(node* &head, int value);
+void insertBefore(node* &head, int value);
+void insertRandom(node* &head, int value);
+void deleteBegin(node* &head);
+void deleteEnd(node* &head);
+void deletell(node* &head, int key);
+bool searchll(node* head, int key);
+
+
+int main(){
+
+    node* head;
+    insertAfter(head,0);
+    int choice, value, pos;
+    char flag;
+
+    cout << "List of Operations\n";
+    cout << "1. Insert in Beginning\n";
+    cout << "2. Insert at Last\n";
+    cout << "3. Insert at Random Location\n";
+    cout << "4. Delete from Beginning\n";
+    cout << "5. Delete from Last\n";
+    cout << "6. Delete node after given location\n";
+    cout << "7. Search for an element\n";
+    cout << "Enter serial number of operation to perform : ";
+    cin >> choice;
+
+    while(true){
+        switch (choice)
+        {
+        case 1 : {
+            cout << "Enter value : ";
+            cin >> value;
+            insertBefore(head,value);
+            displayll(head);
+            break;
+        }
+        case 2 : {
+            cout << "Enter value : ";
+            cin >> value;
+            insertAfter(head,value);
+            displayll(head);
+            break;
+        }
+        case 3 : {
+            cout << "Enter value : ";
+            cin >> value;
+            insertRandom(head,value);
+            displayll(head);
+            break;
+        }
+        case 4 : {
+            deleteBegin(head);
+            displayll(head);
+            break;
+        }
+        case 5 : {
+            deleteEnd(head);
+            displayll(head);
+            break;
+        }
+        case 6 : {
+            cout << "Enter location : ";
+            cin >> value;
+            value++;
+            deletell(head,value);
+            displayll(head);
+            break;
+        }
+        case 7 : {
+            cout << "Enter element to search : ";
+            cin >> value;
+            bool sresult = searchll(head,value);
+            // displayll(head);
+            if(sresult){
+                cout << "yes element is presentn\n";
+            }
+            else{
+                cout << "no element is not presentn\n";
+            }
+            break;
+        }
+        default:
+            break;
+        }
+        cout << "\nDo you want to continue?(y/n) : ";
+        cin >> flag;
+        if(flag == 'n' || flag == 'N'){
+            break;
+        }
+    }
+
+    // insertAfter(head, 1);
+    // insertAfter(head, 3);
+    // insertAfter(head, 4);
+    // insertAfter(head, 6);
+    // insertBefore(head, 0);
+    // insertRandom(head, 5);
+    // displayll(head);
+    // deleteBegin(head);
+    // deleteEnd(head);
+    // displayll(head);
+    // deletell(head,3);
+    // displayll(head);
+
+    return 0;
+}
 
 void displayll(node* head){
     while(head != NULL){
@@ -122,22 +228,3 @@ bool searchll(node* head, int key){
     return false;
 }
 
-int main(){
-    node* head;
-    insertAfter(head, 1);
-    insertAfter(head, 3);
-    insertAfter(head, 4);
-    insertAfter(head, 6);
-    insertBefore(head, 0);
-    insertRandom(head, 5);
-    displayll(head);
-
-    deleteBegin(head);
-    deleteEnd(head);
-    displayll(head);
-
-    deletell(head,3);
-    displayll(head);
-
-    return 0;
-}
