@@ -1,4 +1,6 @@
 #include <iostream>
+#include <random>
+#include <time.h>
 using namespace std;
 
 class node{
@@ -46,16 +48,25 @@ void insertRandom(node* &head, int value){
         head = new node(value);
         return;
     }
-    node* traver = head;
-    int i = 3;
-    while(i--){
-        traver = traver->next;
-        cout << i;
+    srand(time(0));
+    int size= 0;
+    node* temp1 = head;
+    while(temp1 != NULL){
+        size++;
+        temp1 = temp1->next;
     }
-    node* n = new node(value);
-    node* temp = traver;
-    traver = n;
-    traver->next = temp;
+    
+    int i = (rand() % size) - 1;
+    
+    temp1 = head;
+    while(i--){
+        temp1 = temp1->next;
+    }
+    
+    node* temp2 = temp1->next;
+    temp1->next = new node(value);
+    temp1->next->next = temp2;
+
 }
 
 int main(){
@@ -65,7 +76,8 @@ int main(){
     insertAfter(head, 4);
     insertAfter(head, 6);
     insertBefore(head, 0);
-    insertRandom(head, 50);
+    insertRandom(head, 5);
+
     displayll(head);
     return 0;
 }
