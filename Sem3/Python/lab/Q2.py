@@ -23,6 +23,8 @@ def evaluate(empno, weeklysale) :
 
     return evaluation
 
+#MAIN CODE
+
 n = int(input('\nNo of Salesmen : '))
 
 empdata = []

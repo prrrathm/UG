@@ -12,4 +12,5 @@ def patternsum(x,n) :
         patternsum = patternsum + (-1**(i-1)) * i*x / factorial(i)
     return patternsum
 
+n = int(input())
 print(patternsum(12,5))

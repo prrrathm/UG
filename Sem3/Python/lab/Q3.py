@@ -10,7 +10,18 @@ def nthfibo(n) :
     
     return elements
 
+def factorial(num) :
+    if num == 1:
+        return num
+    else :
+        return num * factorial(num-1)
+
 n = int(input('\nn : '))
 fseries = nthfibo(n)
 print('Fibonacci series = ', nthfibo(n))
-print('nth element of series = ', fseries[-1], end='\n\n')
+print('nth element of series = ', fseries[-1])
+print(
+    'Factorial of nth element of Fibonacci series = ', 
+    factorial(fseries[-1]), 
+    end='\n\n'
+    )
