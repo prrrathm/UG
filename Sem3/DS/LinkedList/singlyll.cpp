@@ -56,7 +56,7 @@ void insertRandom(node* &head, int value){
         temp1 = temp1->next;
     }
     
-    int i = (rand() % size) - 1;
+    int i = (rand() % size);
     
     temp1 = head;
     while(i--){
@@ -90,9 +90,29 @@ void deleteEnd(node* &head){
         temp = temp->next;
     }
     
-    // cout << temp->data << endl;
     temp->next = NULL;
+}
 
+void deletell(node* &head, int key){
+    if(head == NULL)
+        return;
+    
+    node* temp = head;
+    while(key--){
+        temp = temp->next;
+        cout << key << endl;
+    }
+        
+}
+
+bool searchll(node* head, int key){
+    while(head != NULL){
+        if(key == head->data){
+            return true;
+        }
+        head = head->next;
+    }
+    return false;
 }
 
 int main(){
@@ -107,6 +127,9 @@ int main(){
 
     deleteBegin(head);
     deleteEnd(head);
+    deletell(head,4);
     displayll(head);
+
+    cout << searchll(head, 5);
     return 0;
 }
