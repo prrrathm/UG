@@ -2,8 +2,6 @@
 #include <random>
 #include <time.h>
 using namespace std;
-void displayll(node* head);
-// void insertAfter(node* &head, int value);
 
 class node{
     public :
@@ -14,7 +12,10 @@ class node{
         }
 };
 
-// void displayll(node* head){
+// void displayll(node* head);
+// void insertAfter(node* &head, int value);
+
+void displayll(node* head){
     while(head != NULL){
         cout << head->data << "->";
         head = head->next;
