@@ -188,8 +188,9 @@ void deleteEnd(node* &head){
     while(temp->next->next != NULL){
         temp = temp->next;
     }
-    
-    delete temp->next;
+    node* temp2 = temp->next;
+    temp->next = NULL;
+    delete temp2;
 }
 
 void deletell(node* &head, int key){
@@ -208,7 +209,6 @@ void deletell(node* &head, int key){
     }
     node* temp2 = temp->next;
     temp->next = temp->next->next;
-    cout << temp->data << endl;
     delete temp2;
 
 }
