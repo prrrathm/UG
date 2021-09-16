@@ -1,16 +1,17 @@
 def replacevowel(txt) :
     txtlst = list(txt)
-    
     for i in range(len(txtlst)) :
         if txtlst[i] in 'aeiouAEIOU' :
             txtlst[i] = '#'
     return ''.join(txtlst)
 
 def countwords(txt) :
-    txtlst = list(txt)
-    print(txtlst)
+    txtlst = txt.split(' ')
+    return len(txtlst)
 
-countwords('hello man hor sd')
+def ispalindrome(txt) :
+    txtlst = list(txt)
+
 
 def main() :
 
@@ -37,10 +38,12 @@ def main() :
 
         elif choice == 4 :
             txt = input('Enter sentence : ')
-            countwords(txt)
+            print('No of words in given string is : ', countwords(txt))
 
+        # elif choice == 5 :
+        
         flag = input('''\nDo you want to continue?(y/n) : ''')
         if flag == 'n' or flag == 'N' :
             break
 
-main()
+# main()
