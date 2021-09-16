@@ -32,4 +32,9 @@ Semester - 3rd
 
 4. 16th September 2021
 
-    
+    Question 7. Write a menu driven program to perform the following on strings:
+        - Find the length of string.
+        - Return maximum of three strings.
+        - Accept a string and replace all vowels with “#”
+        - Find number of words in the given string.
+        - Check whether the string is a palindrome or not.
