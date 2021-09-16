@@ -11,7 +11,6 @@ def countwords(txt) :
 
 def ispalindrome(txt) :
     txtlst = list(txt)
-    
     for i in range( int( len(txtlst)/2 ) ) :
         if txt[i] != txt[-(i+1)] :
             print(txt[i], txt[-(i+1)])
@@ -42,7 +41,7 @@ def main() :
         choice = int(input('Enter serial number of desired operation : '))
         
         if choice == 1 :
-            txt = input('Enter String : ')
+            txt = input('Enter string : ')
             print('Length of string is = ', len(txt))
 
         elif choice == 2 :
