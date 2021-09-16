@@ -21,11 +21,13 @@ void deleteEnd(node* &head);
 void deletell(node* &head, int key);
 bool searchll(node* head, int key);
 
-
 int main(){
 
     node* head;
     insertAfter(head,0);
+    // insertAfter(head,1);
+    // insertAfter(head,2);
+    // displayll(head);
     int choice, value, pos;
     char flag;
 
@@ -37,10 +39,10 @@ int main(){
     cout << "5. Delete from Last\n";
     cout << "6. Delete node after given location\n";
     cout << "7. Search for an element\n";
-    cout << "Enter serial number of operation to perform : ";
-    cin >> choice;
 
     while(true){
+        cout << "Enter serial number of operation to perform : ";
+        cin >> choice;
         switch (choice)
         {
         case 1 : {
@@ -74,27 +76,27 @@ int main(){
             displayll(head);
             break;
         }
-        case 6 : {
-            cout << "Enter location : ";
-            cin >> value;
-            value++;
-            deletell(head,value);
-            displayll(head);
-            break;
-        }
-        case 7 : {
-            cout << "Enter element to search : ";
-            cin >> value;
-            bool sresult = searchll(head,value);
-            // displayll(head);
-            if(sresult){
-                cout << "yes element is presentn\n";
-            }
-            else{
-                cout << "no element is not presentn\n";
-            }
-            break;
-        }
+        // case 6 : {
+        //     cout << "Enter location : ";
+        //     cin >> value;
+        //     value++;
+        //     deletell(head,value);
+        //     displayll(head);
+        //     break;
+        // }
+        // case 7 : {
+        //     cout << "Enter element to search : ";
+        //     cin >> value;
+        //     bool sresult = searchll(head,value);
+        //     // displayll(head);
+        //     if(sresult){
+        //         cout << "yes element is presentn\n";
+        //     }
+        //     else{
+        //         cout << "no element is not presentn\n";
+        //     }
+        //     break;
+        // }
         default:
             break;
         }
@@ -175,7 +177,6 @@ void insertRandom(node* &head, int value){
     node* temp2 = temp1->next;
     temp1->next = new node(value);
     temp1->next->next = temp2;
-
 }
 
 void deleteBegin(node* &head){
@@ -193,13 +194,18 @@ void deleteEnd(node* &head){
         cout << "List Empty" ;
         return;
     }
-
     node* temp = head;
+    if (temp->next == NULL){
+        head = NULL;
+        delete temp;
+        return;
+    }
+    // node* temp = head;
     while(temp->next->next != NULL){
         temp = temp->next;
     }
     
-    temp->next = NULL;
+    delete temp->next;
 }
 
 void deletell(node* &head, int key){
@@ -227,4 +233,3 @@ bool searchll(node* head, int key){
     }
     return false;
 }
-
