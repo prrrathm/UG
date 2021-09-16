@@ -11,6 +11,13 @@ def countwords(txt) :
 
 def ispalindrome(txt) :
     txtlst = list(txt)
+    
+    for i in range( int( len(txtlst)/2 ) ) :
+        if txt[i] != txt[-(i+1)] :
+            print(txt[i], txt[-(i+1)])
+            return False
+    
+    return True
 
 
 def main() :
@@ -31,6 +38,11 @@ def main() :
             txt = input('Enter String : ')
             print('Length of string is = ', len(txt))
 
+        # elif choice == 2 :
+        #     txt1 = input('Enter first String : ')
+        #     txt2 = input('Enter second String : ')
+        #     txt3 = input('Enter String : ')
+
         elif choice == 3 :
             txt = input('Enter String : ')
             txt = replacevowel(txt)
@@ -40,8 +52,14 @@ def main() :
             txt = input('Enter sentence : ')
             print('No of words in given string is : ', countwords(txt))
 
-        # elif choice == 5 :
+        elif choice == 5 :
+            txt = input('Enter String : ')
+            if ispalindrome(txt) : print('yes string is palindrome') 
+            else : print('no string is not a palindrome')
         
+        else :
+            print('Invalid Input')
+
         flag = input('''\nDo you want to continue?(y/n) : ''')
         if flag == 'n' or flag == 'N' :
             break
