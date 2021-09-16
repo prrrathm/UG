@@ -25,9 +25,6 @@ int main(){
 
     node* head;
     insertAfter(head,0);
-    // insertAfter(head,1);
-    // insertAfter(head,2);
-    // displayll(head);
     int choice, value, pos;
     char flag;
 
@@ -96,8 +93,10 @@ int main(){
             }
             break;
         }
-        default:
+        default:{
+            cout << "Invalid Input.\n";
             break;
+        }
         }
         cout << "\nDo you want to continue?(y/n) : ";
         cin >> flag;
@@ -105,19 +104,6 @@ int main(){
             break;
         }
     }
-
-    // insertAfter(head, 1);
-    // insertAfter(head, 3);
-    // insertAfter(head, 4);
-    // insertAfter(head, 6);
-    // insertBefore(head, 0);
-    // insertRandom(head, 5);
-    // displayll(head);
-    // deleteBegin(head);
-    // deleteEnd(head);
-    // displayll(head);
-    // deletell(head,3);
-    // displayll(head);
 
     return 0;
 }
@@ -228,15 +214,7 @@ void deletell(node* &head, int key){
 }
 
 bool searchll(node* head, int key){
-    // if(head->next == NULL){
-    //     if(head->data == key){
-    //         return true;
-    //     }
-    //     else{
-    //         return false;
-    //     }
-    // }
-     if(head == NULL)  {  
+    if(head == NULL)  {  
         printf("\nEmpty List\n");  
     }  
     node* temp = head;
