@@ -76,27 +76,26 @@ int main(){
             displayll(head);
             break;
         }
-        // case 6 : {
-        //     cout << "Enter location : ";
-        //     cin >> value;
-        //     value++;
-        //     deletell(head,value);
-        //     displayll(head);
-        //     break;
-        // }
-        // case 7 : {
-        //     cout << "Enter element to search : ";
-        //     cin >> value;
-        //     bool sresult = searchll(head,value);
-        //     // displayll(head);
-        //     if(sresult){
-        //         cout << "yes element is presentn\n";
-        //     }
-        //     else{
-        //         cout << "no element is not presentn\n";
-        //     }
-        //     break;
-        // }
+        case 6 : {
+            cout << "Enter location : ";
+            cin >> value;
+            value++;
+            deletell(head,value);
+            displayll(head);
+            break;
+        }
+        case 7 : {
+            cout << "Enter element to search : ";
+            cin >> value;
+            // displayll(head);
+            if(searchll(head,value)){
+                cout << "yes element is present\n";
+            }
+            else{
+                cout << "no element is not present\n";
+            }
+            break;
+        }
         default:
             break;
         }
@@ -200,7 +199,6 @@ void deleteEnd(node* &head){
         delete temp;
         return;
     }
-    // node* temp = head;
     while(temp->next->next != NULL){
         temp = temp->next;
     }
@@ -213,6 +211,11 @@ void deletell(node* &head, int key){
         return;
     
     node* temp = head;
+    if (temp->next == NULL){
+        head = NULL;
+        delete temp;
+        return;
+    }
     key--;
     while(--key){
         temp = temp->next;
@@ -225,11 +228,23 @@ void deletell(node* &head, int key){
 }
 
 bool searchll(node* head, int key){
-    while(head != NULL){
-        if(key == head->data){
+    // if(head->next == NULL){
+    //     if(head->data == key){
+    //         return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+    // }
+     if(head == NULL)  {  
+        printf("\nEmpty List\n");  
+    }  
+    node* temp = head;
+    while(temp != NULL){
+        if(key == temp->data){
             return true;
         }
-        head = head->next;
+        temp = temp->next;
     }
     return false;
 }
