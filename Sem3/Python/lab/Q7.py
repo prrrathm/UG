@@ -19,6 +19,13 @@ def ispalindrome(txt) :
     
     return True
 
+def maxstring(txt1,txt2,txt3):
+    if(txt1 > txt2 and txt1 > txt3) :
+        return txt1
+    elif (txt2 > txt1 and txt2 > txt3) :
+        return txt2
+    elif (txt3 > txt1 and txt3 > txt2) :
+        return txt3
 
 def main() :
 
@@ -38,10 +45,11 @@ def main() :
             txt = input('Enter String : ')
             print('Length of string is = ', len(txt))
 
-        # elif choice == 2 :
-        #     txt1 = input('Enter first String : ')
-        #     txt2 = input('Enter second String : ')
-        #     txt3 = input('Enter String : ')
+        elif choice == 2 :
+            txt1 = input('Enter first String : ')
+            txt2 = input('Enter second String : ')
+            txt3 = input('Enter third String : ')
+            print(maxstring(txt1,txt2,txt3))
 
         elif choice == 3 :
             txt = input('Enter String : ')
@@ -64,4 +72,4 @@ def main() :
         if flag == 'n' or flag == 'N' :
             break
 
-# main()
+main()
