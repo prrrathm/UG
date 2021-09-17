@@ -38,3 +38,5 @@ Semester - 3rd
         - Accept a string and replace all vowels with “#”
         - Find number of words in the given string.
         - Check whether the string is a palindrome or not.
+    
+    Question 10. Write a function that takes a sentence as input from the user and calculates the frequency of each letter. Use a variable of dictionary type to maintain the count
