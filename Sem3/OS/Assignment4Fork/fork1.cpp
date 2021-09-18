@@ -4,19 +4,14 @@
 using namespace std;
 
 int main() {
-    cout << "Fork 0" << endl;
-    
+    cout << "Following line of code will run 2^3 times \n\n";
+
     /* fork a child process */
     fork();
-    cout << "Fork 1" << endl;
-    
-    /* fork another child process */
     fork();
-    cout << "Fork 2" << endl;
-    
-    /* and fork another */
     fork();
-    cout << "Fork 3" << endl;
+
+    cout << "Fork" << endl;
     
     return 0;
 }
