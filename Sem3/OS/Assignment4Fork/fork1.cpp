@@ -4,8 +4,7 @@
 using namespace std;
 
 int main() {
-    cout << "Following line of code will run 2^3 times \n\n";
-
+    printf( "Following line of code will run 2^3 times \n\n");
     /* fork a child process */
     fork();
     fork();
