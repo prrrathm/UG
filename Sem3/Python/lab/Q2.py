@@ -25,15 +25,20 @@ def evaluate(empno, weeklysale) :
 
 #MAIN CODE
 
-n = int(input('\nNo of Salesmen : '))
+# n = int(input('\nNo of Salesmen : '))
 
-empdata = []
-for i in range(1, n+1) :
-    sale = float(input('Weekly sale : '))
-    empdata += evaluate(i, sale)
+# empdata = []
+# for i in range(1, n+1) :
+sale = float(input('Weekly sale : '))
+empdata = evaluate(1, sale)
 
 print(
-    'Evaluation of Employees \n', 
+    'Evaluation of Employee \n', 
     empdata,
     end='\n\n'
     )
+
+# 'Employee No. : ' + str(empno),
+# 'sale in month : ' + str(monthlysale),
+# 'remark : ' + remark,
+# 'commission : ' + str(commission)
