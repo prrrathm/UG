@@ -1,44 +1,19 @@
-def evaluate(empno, weeklysale) :
-    monthlysale = weeklysale * 4
+def monthlysale(weeklysale) : return 4 * weeklysale
 
-    if monthlysale >= 80000 :
-        remark = 'Excellent'
-    elif monthlysale >= 60000 and monthlysale < 80000 :
-        remark = 'Good'
-    elif monthlysale >= 40000 and monthlysale < 60000 :
-        remark = 'Average'
-    elif monthlysale < 40000 :
-        remark = 'Work Hard'
+def commission(monthlysale) : return monthlysale * 0.5
 
-    commission = 0.0    
-    if monthlysale > 50000 :
-        commission = 0.05 * monthlysale
+def remark(monthlysale) : 
+    if monthlysale >= 80000 : return 'Excellent'
+    elif monthlysale >= 60000 and monthlysale < 80000 : return 'Good'
+    elif monthlysale >= 40000 and monthlysale < 60000 : return 'Average'
+    else : return 'Work Hard'
 
-    evaluation = [
-        'Employee No. : ' + str(empno),
-        'sale in month : ' + str(monthlysale),
-        'remark : ' + remark,
-        'commission : ' + str(commission)
+weeklysale = float(input('Enter weekly sale of Employee : '))
+
+employeeEvaluation = [
+    monthlysale(weeklysale), 
+    commission(monthlysale(weeklysale)),
+    remark(monthlysale(weeklysale))
     ]
 
-    return evaluation
-
-#MAIN CODE
-
-# n = int(input('\nNo of Salesmen : '))
-
-# empdata = []
-# for i in range(1, n+1) :
-sale = float(input('Weekly sale : '))
-empdata = evaluate(1, sale)
-
-print(
-    'Evaluation of Employee \n', 
-    empdata,
-    end='\n\n'
-    )
-
-# 'Employee No. : ' + str(empno),
-# 'sale in month : ' + str(monthlysale),
-# 'remark : ' + remark,
-# 'commission : ' + str(commission)
+print('Evaluation of Employee = ', employeeEvaluation)
