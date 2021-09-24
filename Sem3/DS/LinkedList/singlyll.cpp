@@ -17,6 +17,10 @@ template <typename T> class Node{
             return a;
         }
         void insertNext(T value){
+            if(this == NULL){
+                this = new Node<T>(value);
+                return;
+            }
             if (this->next == NULL){
                 this->next = new Node<int>(value);
                 return;
@@ -32,8 +36,10 @@ template <typename T> class Node{
             this->next->display();
         }
         void insertBefore(T value){
-            // Node<T> *temp = new Node<T>(this->data);
-            // temp->next = this->next;
+            if(this == NULL){
+                this = new Node<T>(value);
+                return;
+            }
             Node<T> *temp = new Node<int>(this);
             this->data = value;
             this->next = temp;
