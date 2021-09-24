@@ -85,5 +85,85 @@ template <typename T> class Node{
 
 int main(){
     
+    Node<int> *head;
+    int choice, value, pos;
+    char flag;
+
+    cout << "List of Operations\n";
+    cout << "1. Insert in Beginning\n";
+    cout << "2. Insert at Last\n";
+    cout << "3. Insert at Random Location\n";
+    cout << "4. Delete from Beginning\n";
+    cout << "5. Delete from Last\n";
+    cout << "6. Delete node after given location\n";
+    cout << "7. Search for an element\n";
+
+    while(true){
+        cout << "Enter serial number of operation to perform : ";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1 : {
+            cout << "Enter value : ";
+            cin >> value;
+            head->insertBefore(value);
+            head->display();
+            break;
+        }
+        case 2 : {
+            cout << "Enter value : ";
+            cin >> value;
+            head->insertNext(value);
+            head->display();
+            break;
+        }
+        case 3 : {
+            cout << "Enter value : ";
+            cin >> value;
+            head->insertAt(2,value);
+            head->display();
+            break;
+        }
+        case 4 : {
+            head->deleteHead();
+            head->display();
+            break;
+        }
+        case 5 : {
+            head->deleteTail();
+            head->display();
+            break;
+        }
+        case 6 : {
+            cout << "Enter location : ";
+            cin >> value;
+            value;
+            head->deleteAt(value);
+            head->display();
+            break;
+        }
+        case 7 : {
+            cout << "Enter element to search : ";
+            cin >> value;
+            // displayll(head);
+            if(head->search(value)){
+                cout << "yes element is present\n";
+            }
+            else{
+                cout << "no element is not present\n";
+            }
+            break;
+        }
+        default:{
+            cout << "Invalid Input.\n";
+            break;
+        }
+        }
+        cout << "\nDo you want to continue?(y/n) : ";
+        cin >> flag;
+        if(flag == 'n' || flag == 'N'){
+            break;
+        }
+    }
     return 0;
 }
