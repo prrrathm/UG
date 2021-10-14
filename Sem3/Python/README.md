@@ -40,3 +40,12 @@ Semester - 3rd
         - Check whether the string is a palindrome or not.
     
     Question 11. Write a function that takes a sentence as input from the user and calculates the frequency of each letter. Use a variable of dictionary type to maintain the count
+
+5. 14th October 2021
+
+    Question 6. Consider a tuplet 1 = { 1,2,5,7,9,2,4,6,8,10 }.Write a program to perform following operations :
+        
+        a) Print another tuple whose values are even numbers in the given tuple.
+        b) Concatenate a tuplet2 = {11,13,15} with t1.
+        c) Return maximum and minimum value from this tuple.
+        
