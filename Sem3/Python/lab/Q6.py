@@ -1,4 +1,4 @@
-# Question 6. Consider a tuplet1 = { 1,2,5,7,9,2,4,6,8,10 }.Write a program to perform following operations :       
+# Question 6. Consider a tuplet1 = { 1,2,5,7,9,2,4,6,8,10 }.Write a program to perform following operations :  
 
 #a) Print another tuple whose values are even numbers in the given tuple.
 #b) Concatenate a tuplet2 = {11,13,15} with t1.
@@ -19,13 +19,17 @@ def concatTuple(t1, t2):
     
     tuplet = t1 + t2
     return tuple(tuplet)
-    
+        
+if __name__ == '__main__':
 
-tuplet1 = { 1,2,5,7,9,2,4,6,8,10 }
-tuplet2 = {11,13,15}
-listeven = filterEven(tuplet1)
-print('\n\nEven numbers Tuple : ',listeven)
+    tuplet1 = { 1,2,5,7,9,2,4,6,8,10 }
+    tuplet2 = {11,13,15}
 
-tuple2 = concatTuple(tuplet1,tuplet2)
-print('Concatenated Tuplet : ', tuple2)
+    listeven = filterEven(tuplet1)
+    print('\nEven numbers Tuple : ',listeven)
 
+    tuple2 = concatTuple(tuplet1,tuplet2)
+    print('Concatenated Tuplet : ', tuple2)
+
+    print('maximum value of tuple : ', max(tuplet1))
+    print('minimum value of tuple : ', min(tuplet1))
