@@ -1,4 +1,5 @@
-def monthlysale(weeklysale) : return 4 * weeklysale
+def monthlysale(weeklysale) : 
+    return 4 * weeklysale
 
 def commission(monthlysale) : return monthlysale * 0.5
 

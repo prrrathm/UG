@@ -1,10 +1,3 @@
-# Question 6. Consider a tuplet1 = { 1,2,5,7,9,2,4,6,8,10 }.Write a program to perform following operations :  
-
-#a) Print another tuple whose values are even numbers in the given tuple.
-#b) Concatenate a tuplet2 = {11,13,15} with t1.
-#c) Return maximum and minimum value from this tuple.
-
-# a)
 def filterEven(tuplet):
     listtuplet = list()
     for i in tuplet :
