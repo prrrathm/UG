@@ -12,12 +12,16 @@ def remark(monthlysale) :
     elif monthlysale >= 40000 and monthlysale < 60000 : return 'Average'
     else : return 'Work Hard'
 
-weeklysale = float(input('Enter weekly sale of Employee : '))
-
-employeeEvaluation = [
+def empEval(weeklysale) : 
+    return (
     monthlysale(weeklysale), 
     commission(monthlysale(weeklysale)),
     remark(monthlysale(weeklysale))
-    ]
+    )
 
-print('Evaluation of Employee = ', employeeEvaluation)
+if __name__ == '__main__' :
+    weeklysale = float(input('Enter weekly sale of Employee : '))
+    empData = empEval(weeklysale)
+    print('Monthy Sale = ', empData[0],
+          '\nCommission = ', empData[1],
+          '\nRemark = ', empData[2])
