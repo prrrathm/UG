@@ -7,5 +7,6 @@ def num2set(number) :
 
     return digitset
 
-n = int(input('number : '))
-print('Digits of number in a set : ',num2set(n), end='\n\n')
+if __name__ == '__main__' :
+    n = int(input('number : '))
+    print('Digits of number in a set : ',num2set(n), end='\n\n')
