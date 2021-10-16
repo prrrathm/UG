@@ -6,14 +6,12 @@ def areaperimeter(a,b,c) :
     s = perimeter/2
     area = sqrt(s * (s - a) * (s - b) * (s - c))
 
-    measures = (
-        'area = ' + str(area) + ' unit sq.', 
-        'perimeter = ' + str(perimeter) + ' units'
-        )
-    return measures
+    return tuple((area, perimeter))
 
 side1 = float(input('side 1 : '))
 side2 = float(input('side 2 : '))
 side3 = float(input('side 3 : '))
 
-print(areaperimeter(side1, side2, side3))
+measurements = areaperimeter(side1, side2, side3)
+
+print('Area = ', measurements[0], '\nPerimeter = ', measurements[1])
