@@ -1,27 +1,24 @@
-def nthfibo(n) :
-    a = 1
-    b = 1
-    elements = [a,b]
-    for i in range(2, n) :
-        temp = b
-        b = a+b
-        a = temp
-        elements.append(b)
-    
-    return elements
-
-def factorial(num) :
-    if num == 1:
-        return num
+def Fibonacci(n) :
+    assert n > 0
+    if n == 1 :
+        return 0
+    elif n == 2 :
+        return 1
     else :
-        return num * factorial(num-1)
+        return Fibonacci(n-1)+Fibonacci(n-2)
 
-n = int(input('\nn : '))
-fseries = nthfibo(n)
-print('Fibonacci series = ', nthfibo(n))
-print('nth element of series = ', fseries[-1])
-print(
-    'Factorial of nth element of Fibonacci series = ', 
-    factorial(fseries[-1]), 
-    end='\n\n'
-    )
+def factorial(n) :
+    assert n > 0
+    if n == 1:
+        return n
+    else :
+        return n * factorial(n-1)
+
+def FandF(n) :
+    return [Fibonacci(n), factorial(n)]
+
+if __name__ == '__main__' :
+    n = int(input('\nn : '))
+    output = FandF(n)
+    print('nth element of Fibonacci series = ', output[0])
+    print('Factorial of',n,' = ', output[1], end='\n\n')
