@@ -230,14 +230,5 @@ int main(){
         }
 
     }
-    dll.insert(2);
-    dll.insert(3);
-    dll.prepend(1);
-    dll.prepend(0);
-    dll.insertAt(3,4);
-    dll.display();
-    dll.deleteAt(3);
-    dll.display();
-    cout << dll.search(20) << endl;
     return 0;
 }
