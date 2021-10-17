@@ -67,22 +67,31 @@ template<typename A> class Doublyll {
       head->next = temp;
     }
     void insertAt(int index, A value){
-      if(index>size() || index<0){
-        return;
-      }
-      if(head == NULL){
-        head = new Node<A>(value);
-        return;
-      }
-
+        if(index > size() || index < 0){
+            cout<<"index out of bound !"<<endl;
+            return;
+        }
+        if(index == 0){
+            insert(value);
+            return;
+        }
+      Node<A>* node = new Node<A>[1];
+      node->data = value;
+      int count = 0;
       Node<A>* temp = head;
-      for(int i=1; i<index-1; i++){
+      while(temp != NULL && count < index){
+        if(count == index-1){
+          if(temp->next != NULL){
+            node->next = temp->next;
+          }
+          temp->next = node;
+          node->prev = temp;
+          cout<<"new node added at index "<<index<<" !"<<endl;
+          break;
+        }
+        count++;
         temp = temp->next;
       }
-      Node<A>* tempeNext = temp->next;
-      Node<A>* n = new Node<A>(value);
-      temp->next = n;
-      n->next = tempeNext;
     }
     void deleteHead(){
       if(head == NULL){
@@ -142,19 +151,18 @@ template<typename A> class Doublyll {
 
 int main(){
     Doublyll<int> dll;
-    int choice, value;
+    int choice, value, pos;
     char flag;
-    cout << "List of Operations\n";
-    cout << "1. Insert in Beginning\n";
-    cout << "2. Insert at Last\n";
-    cout << "3. Insert at Random Location\n";
-    cout << "4. Delete from Beginning\n";
-    cout << "5. Delete from Last\n";
-    cout << "6. Delete node after given location\n";
-    cout << "7. Search for an element\n";
-
     while(true){
-        cout << "Enter serial number of operation to perform : ";
+        cout << "List of Operations\n";
+        cout << "1. Insert in Beginning\n";
+        cout << "2. Insert at Last\n";
+        cout << "3. Insert at Random Location\n";
+        cout << "4. Delete from Beginning\n";
+        cout << "5. Delete from Last\n";
+        cout << "6. Delete node after given location\n";
+        cout << "7. Search for an element\n";
+        cout << "Choice : ";
         cin >> choice;
         switch (choice){
         case 1 : {
@@ -172,9 +180,11 @@ int main(){
             break;
         }
         case 3 : {
+            cout << "Enter index : ";
+            cin >> pos;
             cout << "Enter value : ";
             cin >> value;
-            dll.insertAt(2,value);
+            dll.insertAt(pos,value);
             dll.display();
             break;
         }
@@ -231,13 +241,3 @@ int main(){
     cout << dll.search(20) << endl;
     return 0;
 }
-
-/*
-1. prepend _/
-2. append _/
-3. insertat _/
-4. deletehead
-5. deletetail
-6. deleteat
-7. search
- */
