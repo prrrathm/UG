@@ -2,12 +2,11 @@
 using namespace std;
 
 template <typename A> class Node{
-  private :
+  public:
     A data;
     Node<A>* next;
     Node<A>* prev;
-    template <typename B> friend class Doublell;
-  public:
+    template <typename B> friend class Doublyll;
     Node(){
       this->prev = NULL;
       this->next = NULL;
@@ -19,13 +18,13 @@ template <typename A> class Node{
     }
 };
 
-template<typename A> class Doublell {
+template<typename A> class Doublyll {
   Node<A>* head;
   public:
-    Doublell(){
+    Doublyll(){
       head = NULL;
     }
-    Doublell(A value){
+    Doublyll(A value){
       head = new Node<A>(value);
     }
     void display(){
@@ -142,17 +141,95 @@ template<typename A> class Doublell {
 };
 
 int main(){
-  Doublell<int> dll;
-  dll.insert(2);
-  dll.insert(3);
-  dll.prepend(1);
-  dll.prepend(0);
-  dll.insertAt(3,4);
-  dll.display();
-  dll.deleteAt(3);
-  dll.display();
-  cout << dll.search(20) << endl;
-  return 0;
+    Doublyll<int> dll;
+    int choice, value;
+    char flag;
+    cout << "List of Operations\n";
+    cout << "1. Insert in Beginning\n";
+    cout << "2. Insert at Last\n";
+    cout << "3. Insert at Random Location\n";
+    cout << "4. Delete from Beginning\n";
+    cout << "5. Delete from Last\n";
+    cout << "6. Delete node after given location\n";
+    cout << "7. Search for an element\n";
+
+    while(true){
+        cout << "Enter serial number of operation to perform : ";
+        cin >> choice;
+        switch (choice){
+        case 1 : {
+            cout << "Enter value : ";
+            cin >> value;
+            dll.prepend(value);
+            dll.display();
+            break;
+        }
+        case 2 : {
+            cout << "Enter value : ";
+            cin >> value;
+            dll.insert(value);
+            dll.display();
+            break;
+        }
+        case 3 : {
+            cout << "Enter value : ";
+            cin >> value;
+            dll.insertAt(2,value);
+            dll.display();
+            break;
+        }
+        case 4 : {
+            dll.deleteHead();
+            dll.display();
+            break;
+        }
+        case 5 : {
+            dll.deleteTail();
+            dll.display();
+            break;
+        }
+        case 6 : {
+            cout << "Enter location : ";
+            cin >> value;
+            value;
+            dll.deleteAt(value);
+            dll.display();
+            break;
+        }
+        case 7 : {
+            cout << "Enter element to search : ";
+            cin >> value;
+            // displayll(head);
+            if(dll.search(value)){
+                cout << "yes element is present\n";
+            }
+            else{
+                cout << "no element is not present\n";
+            }
+            break;
+        }
+        default:{
+            cout << "Invalid Input.\n";
+            break;
+        }
+        }
+        cout << "\nDo you want to continue?(y/n) : ";
+        cin >> flag;
+        if(flag == 'n' || flag == 'N'){
+            break;
+        }
+
+    }
+    dll.insert(2);
+    dll.insert(3);
+    dll.prepend(1);
+    dll.prepend(0);
+    dll.insertAt(3,4);
+    dll.display();
+    dll.deleteAt(3);
+    dll.display();
+    cout << dll.search(20) << endl;
+    return 0;
 }
 
 /*
