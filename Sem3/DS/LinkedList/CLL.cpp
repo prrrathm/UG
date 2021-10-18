@@ -167,88 +167,113 @@ template<typename A> class circularll{
         }
         return false;
     }
+    void concat(circularll<A> first, circularll<A> second){
+          Node<A>* alpha = first.head;
+          Node<A>* beta = second.head;
+          int sizeA = first.size();
+          int sizeB = second.size();
 
+          while(sizeA--){
+              insertNext(alpha->data);
+              alpha = alpha->next;
+          }
+          while(sizeB--){
+              insertNext(beta->data);
+              beta = beta->next;
+          }
+      }
 };
 
 int main(){
-    circularll<int> cll;
+    circularll<int> A, B, C;
     int choice, value, pos;
-    char flag;
     while(true){
-        cout << "Select operation\n";
+        cout << "\n===================\n";
+        cout << "Select an Operation for Doubly Linked List\n";
         cout << "1. Insert in Beginning\n";
         cout << "2. Insert at Last\n";
         cout << "3. Insert at Random Location\n";
         cout << "4. Delete from Beginning\n";
         cout << "5. Delete from Last\n";
-        cout << "6. Delete node after given location\n";
-        cout << "7. Search for an element\n";
+        cout << "6. Delete at an Index\n";
+        cout << "7. Search an element\n";
+        cout << "8. Concatenate\n";
+        cout << "9. Exit\n";
         cin >> choice;
-        switch (choice){
-        case 1 : {
-            cout << "Enter value : ";
-            cin >> value;
-            cll.insertHead(value);
-            cll.display();
-            break;
-        }
-        case 2 : {
-            cout << "Enter value : ";
-            cin >> value;
-            cll.insertNext(value);
-            cll.display();
-            break;
-        }
-        case 3 : {
-            cout << "Enter index : ";
-            cin >> pos;
-            cout << "Enter value : ";
-            cin >> value;
-            cll.insertAt(pos,value);
-            cll.display();
-            break;
-        }
-        case 4 : {
-            cll.deleteHead();
-            cll.display();
-            break;
-        }
-        case 5 : {
-            cll.deleteTail();
-            cll.display();
-            break;
-        }
-        case 6 : {
-            cout << "Enter location : ";
-            cin >> value;
-            value;
-            cll.deleteAt(value);
-            cll.display();
-            break;
-        }
-        case 7 : {
-            cout << "Enter element to search : ";
-            cin >> value;
-            // displayll(head);
-            if(cll.search(value)){
-                cout << "yes element is present\n";
+        switch (choice) {
+            case 1 : {
+                cout << "Enter value : ";
+                cin >> value;
+                A.insertHead(value);
+                A.display();
+                break;
             }
-            else{
-                cout << "no element is not present\n";
+            case 2 : {
+                cout << "Enter value : ";
+                cin >> value;
+                A.insertNext(value);
+                A.display();
+                break;
             }
-            break;
+            case 3 : {
+                cout << "Enter Index : ";
+                cin >> pos;
+                cout << "Enter value : ";
+                cin >> value;
+                A.insertAt(2,value);
+                A.display();
+                break;
+            }
+            case 4 : {
+                A.deleteHead();
+                A.display();
+                break;
+            }
+            case 5 : {
+                A.deleteTail();
+                A.display();
+                break;
+            }
+            case 6 : {
+                cout << "Enter location : ";
+                cin >> value;
+                value;
+                A.deleteAt(value);
+                A.display();
+                break;
+            }
+            case 7 : {
+                cout << "Enter element to search : ";
+                cin >> value;
+                if(A.search(value)){
+                    cout << "yes element is present\n";
+                }
+                else{
+                    cout << "no element is not present\n";
+                }
+                break;
+            }
+            case 8 : {
+                cout << "size of other linked list : ";
+                cin >> pos;
+                cout << "Enter elements of linked list\n";
+                while(pos--){
+                    cin >> value;
+                    B.insertNext(value);
+                }
+                C.concat(A,B);
+                C.display();
+                break;
+            }
+            case 9 :{
+                exit(0);
+                break;
+            } 
+            default:{
+                cout << "Invalid Input.\n";
+                break;
+            }
         }
-        default:{
-            cout << "Invalid Input.\n";
-            break;
-        }
-        }
-        cout << "\nDo you want to continue?(y/n) : ";
-        cin >> flag;
-        if(flag == 'n' || flag == 'N'){
-            break;
-        }
-
     }
     return 0;
 }

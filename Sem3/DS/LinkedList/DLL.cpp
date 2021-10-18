@@ -160,7 +160,6 @@ template<typename A> class Doublell {
 };
 
 int main(){
-  Doublell<int> dll;
     Doublell<int> A, B, C;
     int choice, value, pos;
     while(true){
