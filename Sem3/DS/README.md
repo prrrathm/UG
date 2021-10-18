@@ -24,8 +24,7 @@ Semester - 3
 Binary search. Use Template functions.
 2. WAP using templates to sort a list of elements. Give user the option to perform sorting using
 Insertion sort, Bubble sort or Selection sort.
-3. Implement Linked List using templates. Include functions for insertion, deletion and search of
-a number, reverse the list and concatenate two linked lists (include a function and also overload
+3. Implement Linked List using templates. Include functions for insertion, deletion and search of a number, reverse the list and concatenate two linked lists (include a function and also overload
 operator +).
 4. Implement Doubly Linked List using templates. Include functions for insertion, deletion and
 search of a number, reverse the list.
