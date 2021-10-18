@@ -137,20 +137,96 @@ template<typename T>class LinkedList{
 };
 
 int main(){
-  LinkedList<int> A, B, C;
-  A.append(1);
-  A.append(3);
-  A.prepend(2);
-  A.insert(1,4);
-  A.display();
+    LinkedList<int> A, B, C;
+    int choice, value, pos;
+    
+    
 
-  B.append(3);
-  B.append(6);
-  B.prepend(5);
-  B.insert(1,5);
-  B.display();
-  
-  C.concat(A,B);
-  C.display();
+    while(true){
+        cout << "Select an Operations\n";
+        cout << "1. Insert in Beginning\n";
+        cout << "2. Insert at Last\n";
+        cout << "3. Insert at Random Location\n";
+        cout << "4. Delete from Beginning\n";
+        cout << "5. Delete from Last\n";
+        cout << "6. Delete at an Index\n";
+        cout << "7. Search an element\n";
+        cout << "8. Concatenate\n";
+        cout << "9. Exit\n";
+        cin >> choice;
+        switch (choice) {
+            case 1 : {
+                cout << "Enter value : ";
+                cin >> value;
+                A.prepend(value);
+                A.display();
+                break;
+            }
+            case 2 : {
+                cout << "Enter value : ";
+                cin >> value;
+                A.append(value);
+                A.display();
+                break;
+            }
+            case 3 : {
+                cout << "Enter Index : ";
+                cin >> pos;
+                cout << "Enter value : ";
+                cin >> value;
+                A.insert(2,value);
+                A.display();
+                break;
+            }
+            case 4 : {
+                A.deleteHead();
+                A.display();
+                break;
+            }
+            case 5 : {
+                A.deleteTail();
+                A.display();
+                break;
+            }
+            case 6 : {
+                cout << "Enter location : ";
+                cin >> value;
+                value;
+                A.deleteAt(value);
+                A.display();
+                break;
+            }
+            case 7 : {
+                cout << "Enter element to search : ";
+                cin >> value;
+                if(A.search(value)){
+                    cout << "yes element is present\n";
+                }
+                else{
+                    cout << "no element is not present\n";
+                }
+                break;
+            }
+            case 8 : {
+                cout << "size of other linked list : ";
+                cout << "Enter elements of linked list\n";
+                cin >> pos;
+                while(pos--){
+                    cin >> value;
+                    B.append(value);
+                }
+                C.concat(A,B);
+                C.display();
+            }
+            case 9 :{
+                exit(0);
+                break;
+            } 
+            default:{
+                cout << "Invalid Input.\n";
+                break;
+            }
+        }
+    }
   return 0;
 }
