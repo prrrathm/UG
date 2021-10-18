@@ -139,11 +139,9 @@ template<typename T>class LinkedList{
 int main(){
     LinkedList<int> A, B, C;
     int choice, value, pos;
-    
-    
-
     while(true){
-        cout << "Select an Operations\n";
+        cout << "\n===================\n";
+        cout << "Select an Operation\n";
         cout << "1. Insert in Beginning\n";
         cout << "2. Insert at Last\n";
         cout << "3. Insert at Random Location\n";
@@ -209,14 +207,15 @@ int main(){
             }
             case 8 : {
                 cout << "size of other linked list : ";
-                cout << "Enter elements of linked list\n";
                 cin >> pos;
+                cout << "Enter elements of linked list\n";
                 while(pos--){
                     cin >> value;
                     B.append(value);
                 }
                 C.concat(A,B);
                 C.display();
+                break;
             }
             case 9 :{
                 exit(0);
