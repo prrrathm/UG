@@ -13,10 +13,6 @@ template<typename A> class Queue {
         size = s;
         arr = new A[s];
 	}
-	void enQueue(int value);
-	int deQueue();
-	void displayQueue();
-
     /* Function to create Circular queue */
     void enQueue(A value) {
         if ((front == 0 && rear == size-1) || (rear == (front-1)%(size-1))) {
@@ -81,44 +77,48 @@ template<typename A> class Queue {
 
 /* Driver of the program */
 int main() {
-	Queue<int> q(5);
-    int operation;
+    int size, operation, data;
+    cout << "Enter size of queue ->";
+    cin >> size;
+	Queue<int> q(size);
+    cout << q.size;
     while(true){
+        cout << "\n====================\n";
         cout << "Select operation\n";
         cout << "1. Add element to Queue\n";
         cout << "2. Delete element from Queue\n";
         cout << "3. Display Queue\n";
         cout << "4. Front of Queue\n";
         cout << "5. Rear of Queue\n";
+        cout << "6. Exit\n";
         cout << "->";
         cin >> operation;
         switch (operation) {
         case 1 : 
-
+            cout << "Enter Data ->";
+            cin >> data;
+            q.enQueue(data);
             break;
-        
+        case 2 :
+            q.deQueue();
+            break;
+        case 3 :
+            q.displayQueue();
+            break;
+        case 4 :
+            cout << "Front of Queue ->" << q.arr[q.front] << endl;
+            break;
+        case 5 :
+            cout << "Rear of Queue ->" << q.arr[q.rear] << endl;
+            break;
+        case 6 :
+            exit(0);
         default:
-            break;
+            cout << "INVALID INPUT" << endl;
+            continue;
         }
     }
 
-	// Inserting elements in Circular Queue
-    q.enQueue(14);
-	q.enQueue(22);
-	q.enQueue(13);
-	q.enQueue(-6);
-	// Display elements present in Circular Queue
-	q.displayQueue();
-	// Deleting elements from Circular Queue
-	printf("\nDeleted value = %d", q.deQueue());
-	printf("\nDeleted value = %d", q.deQueue());
-	printf("\n%d",q.size);
-	q.displayQueue();
-	q.enQueue(9);
-	q.enQueue(20);
-	q.enQueue(5);
-	q.displayQueue();
-	q.enQueue(20);
     printf("\n\n");
 	return 0;
 }
