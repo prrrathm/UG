@@ -3,15 +3,19 @@
 using namespace std;
 
 template < typename T > class Queue {
-    private:
+    public:
     T * arr;
     int fIndex, rIndex;
-    public:
-        Queue() {
-            arr = new T[SIZE];
-            fIndex = 0;
-            rIndex = 0;
-        }
+    Queue() {
+        arr = new T[SIZE];
+        fIndex = 0;
+        rIndex = 0;
+    }
+    void display(){
+        for (int i=fIndex;i<rIndex;i++)
+            cout << arr[i] << "->";
+        cout << "...\n";
+    }
     bool isFull() {
         return (rIndex + 1) % SIZE == fIndex;
     }
@@ -32,10 +36,11 @@ template < typename T > class Queue {
             return;
         }
         cout<<front()<<" dequeued"<<endl;
+        // arr[fIndex] = 0;
         fIndex = (fIndex + 1) % SIZE;
     }
     T front(){
-        return isEmpty() ? NULL : *(arr + fIndex);
+        return *(arr + fIndex);
     }
 };
 
@@ -54,26 +59,28 @@ int main() {
         cout << "->";
         cin >> operation;
         switch (operation) {
-            case 1:
-                cout << "enter item to enqueue:" << endl;
+            case 1 :
+                cout << "enter item to enqueue:" ;
                 cin >> data;
                 queue.enqueue(data);
                 break;
-            case 2:
+            case 2 :
                 queue.dequeue();
                 break;
-            case 3:
-                if (queue.isEmpty()) {
-                    cout << "queue is empty" << endl;
-                } else {
-                    cout << "front: " << queue.front() << endl;
-                }
+            case 3 :
+                queue.display();
                 break;
-            case 4:
+            case 4 :
+                cout << "Front of Queue : " << queue.arr[queue.fIndex] << endl ;
+                break;
+            case 5 :
+                cout << "Rear of Queue : " << queue.arr[queue.rIndex] << endl;
+                break;
+            case 6 :
                 exit(0);
                 break;
             default:
-                cout << "invalid selection" << endl;
+                cout << "INVALID INPUT" << endl;
                 break;
         }
     }

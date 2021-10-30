@@ -56,6 +56,13 @@ template<typename A> class Doublell {
       head = head->next;
       delete temp;
     }
+    A front(){
+      Node<A>* temp = head;
+      while(temp->next != NULL)
+        temp = temp->next;
+      
+      return temp->data;
+    }
 };
 
 int main(){
@@ -67,8 +74,9 @@ int main(){
         cout << "1. Add element to Queue\n";
         cout << "2. Delete element from Queue\n";
         cout << "3. Display Queue\n";
-        cout << "4. Rear of Queue\n";
-        cout << "5. Exit\n";
+        cout << "4. Front of Queue\n";
+        cout << "5. Rear of Queue\n";
+        cout << "6. Exit\n";
         cout << "->";
         cin >> choice;
         switch (choice) {
@@ -76,19 +84,20 @@ int main(){
                 cout << "Enter value ->";
                 cin >> value;
                 A.insert(value);
-                A.display();
                 break;
             case 2 : 
                 A.deleteHead();
-                A.display();
                 break;
             case 3 :
                 A.display();
                 break;
             case 4 :
-                cout << "Rear = " << A.head->data;
+                cout << "Front = " << A.front();
                 break;
             case 5 :
+                cout << "Rear = " << A.head->data;
+                break;
+            case 6 :
                 exit(0);
                 break;
             default:
