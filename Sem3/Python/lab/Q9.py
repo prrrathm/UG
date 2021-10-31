@@ -11,7 +11,7 @@ StudentScores = {
 
 def TopStudent(stud) :
     lis = [0]
-    try :
+    try:
         for k,v in stud.items() :
             # S = 
             lis.append( sum(v.values()) )

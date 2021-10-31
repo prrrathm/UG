@@ -1,7 +1,7 @@
 # Input a subjects in a tuple as in Example T: 
-#     T=(Python_CS1,DS_CS2,OS_CS3,Math_CS4,WDD_CS5)
+#   T=(Python_CS1,DS_CS2,OS_CS3,Math_CS4,WDD_CS5)
 # Create a dictionary with subject name and code as given below: 
-#     Subjects = {‘Python’: ‘CS1’, ‘DS’: ‘CS2’, ‘OS’: ‘CS3’, ‘WDD’: ‘CS5}
+#   Subjects = {‘Python’: ‘CS1’, ‘DS’: ‘CS2’, ‘OS’: ‘CS3’, ‘WDD’: ‘CS5}
 
 print('Enter tuple  : ')
 t = input()
