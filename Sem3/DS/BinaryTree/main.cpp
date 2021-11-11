@@ -36,9 +36,6 @@ int main() {
     tr.add(5);
     tr.add(22);
     tr.add(222);
-    tr.showFirst();
-    cout << endl;
-    tr.showLast();
-    cout << endl;
+    tr.print();
     return 0;
 }
