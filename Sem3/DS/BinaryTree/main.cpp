@@ -8,20 +8,6 @@
 #include "Tree.h"
 using namespace std;
 
-class Test {
-    string name;
-    public:
-        Test () {}
-        Test(string name_) : name(name_) {}
-        friend ostream& operator<<(ostream& os, Test& t) {
-            os << t.name;
-            return os;
-        }
-        bool operator<(Test t);
-        bool operator<=(Test t);
-        bool operator>(Test t);
-};
-
 int main() {
     Tree<int> tr;
     tr.add(4);
