@@ -39,7 +39,19 @@ class Tree {
         bool search(int key) {
             return searchNode(root,key);
         }
+        void printPostOrder(){
+            printPostorderSub(root);
+        }
 };
+
+template<typename T>
+void printPostorderSub(Node<T>* node) {
+    if (node == NULL)
+        return;
+    printPostorderSub(node->pLeft);
+    printPostorderSub(node->pRight);
+    cout << node->val << " ";
+}
 
 template<typename T>
 Node<T>* Tree<T>::insert_at_sub(T i, Node<T> *p) {
