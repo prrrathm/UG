@@ -10,23 +10,8 @@ using namespace std;
 
 int main() {
     cout << "\tBINARY TREE\n";
-    // Tree<int> tr;
-    // tr.add(4);
-    // tr.add(6);
-    // tr.add(1);
-    // tr.add(9);
-    // tr.add(2);
-    // tr.add(0);
-    // tr.add(89);
-    // tr.add(12);
-    // tr.add(32);
-    // tr.add(5);
-    // tr.add(22);
-    // tr.add(222);
-    // tr.print();
-    // cout << tr.search(222) << endl;
 
-    Tree<int> A, B, C;
+    Tree<int> A;
     int choice, value, pos;
     while(true){
         cout << "\n===================\n";
@@ -44,7 +29,6 @@ int main() {
                 cout << "Enter value : ";
                 cin >> value;
                 A.add(value);
-                // A.display();
                 break;
             }
             case 2 : {
@@ -65,13 +49,17 @@ int main() {
                 break;
             }
             case 4 : {
-                A.print();
+                cout << "PreOrder Traversal : ";
+                A.printPreOrder();
                 break;
             }
             case 5 : {
+                cout << "InOrder Traversal : ";
+                A.printInOrder();
                 break;
             }
             case 6 : {
+                cout << "PostOrder Traversal : ";
                 A.printPostOrder();
                 break;
             }

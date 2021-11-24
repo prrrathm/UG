@@ -12,7 +12,10 @@ class Tree {
     Node<T>* delete_at_sub(T i, Node<T>*);
     Node<T>* minValue(Node<T>* temp);
     bool searchNode(Node<T> *temp, int value);
-    void print_sub(Node<T> *p);
+    void printPreOrderSub(Node<T>* node);
+    void printInOrderSub(Node<T>* node);
+    void printPostOrderSub(Node<T>* node);
+
     int t_size = 0;
 
     public:
@@ -29,10 +32,6 @@ class Tree {
         void remove(T i){
             delete_at_sub(i, root);
         }
-        void print() {
-            print_sub(root);
-            cout << endl;
-        };
         int get_size() {
             return t_size;
         }
@@ -40,17 +39,40 @@ class Tree {
             return searchNode(root,key);
         }
         void printPostOrder(){
-            printPostorderSub(root);
+            printPostOrderSub(root);
+        }
+        void printPreOrder(){
+            printPreOrderSub(root);
+        }void printInOrder(){
+            printInOrderSub(root);
         }
 };
 
 template<typename T>
-void printPostorderSub(Node<T>* node) {
+void Tree<T>::printPostOrderSub(Node<T>* node) {
     if (node == NULL)
         return;
-    printPostorderSub(node->pLeft);
-    printPostorderSub(node->pRight);
+    printPostOrderSub(node->pLeft);
+    printPostOrderSub(node->pRight);
     cout << node->val << " ";
+}
+
+template<typename T>
+void Tree<T>::printInOrderSub(Node<T>* node) {
+    if (node == NULL)
+        return;
+    printInOrderSub(node->pLeft); 
+    cout << node->val << " ";
+    printInOrderSub(node->pRight);
+}
+ 
+template<typename T>
+void Tree<T>::printPreOrderSub(Node<T>* node) {
+    if (node == NULL)
+        return;
+    cout << node->val << " ";
+    printPreOrderSub(node->pLeft);
+    printPreOrderSub(node->pRight);
 }
 
 template<typename T>
@@ -65,14 +87,6 @@ Node<T>* Tree<T>::insert_at_sub(T i, Node<T> *p) {
     return p;
 }
 
-template<typename T>
-void Tree<T>::print_sub(Node<T> *p) {
-    if(p) {
-        print_sub(p->pLeft);
-        cout << p->val << " ";
-        print_sub(p->pRight);
-    }
-}
 
 template <typename T>
 Node<T>* Tree<T>::delete_at_sub(T x, Node<T>* tree) {
@@ -105,23 +119,6 @@ Node<T>* Tree<T>::delete_at_sub(T x, Node<T>* tree) {
 
 template<typename T>
 bool Tree<T>::searchNode(Node<T> *temp, int value) {
-    // if(temp == NULL){
-    //     printf("Tree is empty\n");
-    //     return false;
-    // }
-    // else{
-    //     if(temp->val == value) {  
-    //         return true;
-    //     }  
-    //     if(temp->pLeft != NULL) {  
-    //         searchNode(temp->pLeft, value);
-    //     }
-    //     if(temp->pRight != NULL) {
-    //         searchNode(temp->pRight, value);
-    //     }
-    // }
-    // return false;
-
     Node<T> *current = root;
     while(current->val != value) {
         if(current != NULL) {
