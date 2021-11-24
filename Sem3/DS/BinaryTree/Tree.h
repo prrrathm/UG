@@ -9,8 +9,8 @@ template<typename T>
 class Tree {
     Node<T>* root;
     Node<T>* insert_at_sub(T i, Node<T>*);
-    Node<T>* delete_at_sub(T i, Node<T>*);
     Node<T>* minValue(Node<T>* temp);
+    Node<T>* removebst(Node<T> *root,int data);
     bool searchNode(Node<T> *temp, int value);
     void printPreOrderSub(Node<T>* node);
     void printInOrderSub(Node<T>* node);
@@ -30,7 +30,7 @@ class Tree {
             root = insert_at_sub(i, root);
         }
         void remove(T i){
-            delete_at_sub(i, root);
+            removebst(root,i);
         }
         int get_size() {
             return t_size;
@@ -52,82 +52,87 @@ template<typename T>
 void Tree<T>::printPostOrderSub(Node<T>* node) {
     if (node == NULL)
         return;
-    printPostOrderSub(node->pLeft);
-    printPostOrderSub(node->pRight);
-    cout << node->val << " ";
+    printPostOrderSub(node->left);
+    printPostOrderSub(node->right);
+    cout << node->data << " ";
 }
 
 template<typename T>
 void Tree<T>::printInOrderSub(Node<T>* node) {
     if (node == NULL)
         return;
-    printInOrderSub(node->pLeft); 
-    cout << node->val << " ";
-    printInOrderSub(node->pRight);
+    printInOrderSub(node->left); 
+    cout << node->data << " ";
+    printInOrderSub(node->right);
 }
  
 template<typename T>
 void Tree<T>::printPreOrderSub(Node<T>* node) {
     if (node == NULL)
         return;
-    cout << node->val << " ";
-    printPreOrderSub(node->pLeft);
-    printPreOrderSub(node->pRight);
+    cout << node->data << " ";
+    printPreOrderSub(node->left);
+    printPreOrderSub(node->right);
 }
 
 template<typename T>
 Node<T>* Tree<T>::insert_at_sub(T i, Node<T> *p) {
     if( ! p )
         return new Node<T>(i);
-    else if (i <= p->val)
-        p->pLeft = insert_at_sub(i, p->pLeft);
-    else if (i > p->val)
-        p->pRight = insert_at_sub(i, p->pRight);
+    else if (i <= p->data)
+        p->left = insert_at_sub(i, p->left);
+    else if (i > p->data)
+        p->right = insert_at_sub(i, p->right);
 
     return p;
 }
 
-
 template <typename T>
-Node<T>* Tree<T>::delete_at_sub(T x, Node<T>* tree) {
-    Node<T>* temp;
-    if(tree == NULL)
-        return NULL;
-    else if(x < tree->val)
-        tree->pLeft = delete_at_sub(x, tree->pLeft);
-    else if(x > tree->val)
-        tree->pRight = delete_at_sub(x, tree->pRight);
-    else if(tree->pLeft && tree->pRight)
-    {
-        temp = minValue(tree->pRight);
-        tree->val = temp->val;
-        tree->pRight = delete_at_sub(tree->val, tree->pRight);
+Node<T>* Tree<T>::removebst(Node<T> *root,int data) {
+    if(root==NULL) {
+        return 0;
     }
-    else
-    {
-        temp = tree;
-        if(tree->pLeft == NULL)
-            tree = tree->pRight;
-        else if(tree->pRight == NULL)
-            tree = tree->pLeft;
-        delete temp;
+    if(root->data > data) {
+        root->left=removebst(root->left,data);
     }
-
-    return tree;
+    else if(root->data<data) {
+        root->right=removebst(root->right,data);
+    }
+    else{
+        if(root->left==NULL&&root->right==NULL) {
+            delete root;
+            return NULL;
+        }
+        else if(root->left==NULL) {
+            Node<T>* temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if(root->right==NULL) {
+            Node<T>*temp = root->left;
+            delete root;
+            return temp;
+        }
+        else {
+            Node<T> *min= minValue(root->right);
+            root->data=min->data;
+            root->right=removebst(root->right,min->data);
+        }
+    }
+    return root;
 }
-
 
 template<typename T>
 bool Tree<T>::searchNode(Node<T> *temp, int value) {
     Node<T> *current = root;
-    while(current->val != value) {
+    while(current->data != value) {
         if(current != NULL) {
-            // cout << current->val;
-            if(current->val > value) {
-                current = current->pLeft;
+            // cout << current->data;
+            if(current->data > value) {
+                current = current->left;
             }
             else {
-                current = current->pRight;
+                current = current->right;
             }
             if(current == NULL) {
                 return false;
@@ -141,10 +146,10 @@ template<typename T>
 Node<T> * Tree<T>::minValue(Node<T> * temp) {
     if(temp == NULL)
         return NULL;
-    else if(temp->pLeft == NULL)
+    else if(temp->left == NULL)
         return temp;
     else
-        return minValue(temp->pLeft);
+        return minValue(temp->left);
 }
 
 #endif

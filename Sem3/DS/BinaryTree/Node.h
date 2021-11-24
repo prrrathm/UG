@@ -3,17 +3,14 @@
 
 template<typename T> class Node {
     public:
-        Node<T> *pLeft;
-        Node<T> *pRight;
-        T val;
-
+        Node<T> *left;
+        Node<T> *right;
+        T data;
+        // Node
         Node<T>(T val) {
-            this->val = val;
-            pLeft = pRight = nullptr;
+            this->data = val;
+            left = right = nullptr;
         }
-
-    // Node<T>(const Node<T>& src); -> to be implemented
-    // Node& operator=(const Node&); -> to be implemented
 };
 
 
