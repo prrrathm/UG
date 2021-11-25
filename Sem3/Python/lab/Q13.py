@@ -48,6 +48,27 @@ while(True) :
         plt.legend(['cos(x)'])
         plt.show()
     
+    elif choice == 3 :
+        # x2-4x+4
+        degree = int(input("Enter Degree of polynomial =>"))
+        coefficient = list()
+        exponent = list()
+        polynomial = list()
+        print("Now enter pairs of coeffient and exponent of each term.")
+        
+        #exponent
+        exponent = range[1,degree+1]
+                
+        for i in range(degree) :
+            temp1 = int(input("Coefficient of term "+str(i+1)+" =>"))
+            coefficient.append(temp1)
+            
+        for i in range(-20,20) :
+            for x in range(degree) :
+                temp = coefficient[x] * x ** exponent[x]
+        
+        print(polynomial)
+                
     elif choice == 4 :
         e = int(input("Enter exponent =>"))
         x = list()
