@@ -6,22 +6,23 @@ import matplotlib.pyplot as plt
 degree = int(input("Enter Degree of polynomial =>"))
 
 # exponent
-exponent = [*range(1,degree+1)]
+e = reversed(range(degree+1))
+exponent = [*e]
 print(exponent)
 
 # coefficient
 coefficient = list()
 print("\nEnter coeffients")        
-for i in range(1, degree+2) :
+for i in range(degree+1) :
     temp = int(input("=>"))
     coefficient.append(temp)
 
 # polynomial
 polynomial = list()
 for i in range(-20,20) :
-    for x in range(0, degree) :
+    for x in range(degree) :
         temp = coefficient[x] * (i ** exponent[x]+1)
-    temp = temp + coefficient[-1]*i
+    # temp = temp + coefficient[-1]*i
     print(temp)
     polynomial.append(temp)
 print(polynomial)

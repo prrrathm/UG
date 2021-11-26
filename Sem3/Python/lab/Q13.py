@@ -51,23 +51,24 @@ while(True) :
     elif choice == 3 :
         # x2-4x+4
         degree = int(input("Enter Degree of polynomial =>"))
-        coefficient = list()
-        exponent = list()
-        polynomial = list()
-        print("Now enter pairs of coeffient and exponent of each term.")
+        coeffs = list()
+        for i in range(degree+1) :
+            temp = int(input('=>'))
+            coeffs.append(temp)
         
-        #exponent
-        exponent = range[1,degree+1]
+        x = np.linspace(-100, 100, 10)
                 
-        for i in range(degree) :
-            temp1 = int(input("Coefficient of term "+str(i+1)+" =>"))
-            coefficient.append(temp1)
-            
-        for i in range(-20,20) :
-            for x in range(degree) :
-                temp = coefficient[x] * x ** exponent[x]
-        
-        print(polynomial)
+        def PolyCoefficients(x, coeffs):
+            y = 0
+            for i in range(len(coeffs)):
+                y += coeffs[i]*x**i
+            return y
+
+        plt.plot(x, PolyCoefficients(x, coeffs))
+        plt.xlabel('x [-50,50]')
+        plt.ylabel('f(x)')
+        plt.title('Plot of Polynomial Function')
+        plt.show()
                 
     elif choice == 4 :
         e = int(input("Enter exponent =>"))
