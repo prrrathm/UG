@@ -1,6 +1,7 @@
 # include <stdio.h>
 # include <pthread.h>
-
+# include <iostream>
+using namespace std;
 void * thread_sum(void *);
 int TotalSum=0;
 pthread_mutex_t mVar=PTHREAD_MUTEX_INITIALIZER;
@@ -8,8 +9,8 @@ pthread_mutex_t mVar=PTHREAD_MUTEX_INITIALIZER;
 int main() {
     int iNumber,iCount;
     pthread_t tid;
-    printf("Enter Number Up to Which You want to Sum :");
-    scanf("%d",&iNumber);    
+    cout << "Enter Number Up to Which You want to Sum : ";
+    cin >> iNumber;
     pthread_create(&tid,NULL,thread_sum,(void *)&iNumber);
 
     for(iCount=1;iCount<=iNumber;iCount=iCount+2) {
@@ -20,7 +21,7 @@ int main() {
     
     pthread_join(tid,NULL);
     
-    printf("Final Sum is : %d \n",TotalSum);
+    cout << "Final Sum is : " << TotalSum << endl;
     return 0;
 }
 

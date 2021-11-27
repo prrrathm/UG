@@ -1,6 +1,8 @@
 #include <sys/types.h>
 #include <stdio.h>
+#include <iostream>
 #include <unistd.h>
+using namespace std;
 
 int main() {
     pid_t pid, pid1;
@@ -8,20 +10,20 @@ int main() {
     /* fork a child process */
     pid = fork();
     if (pid < 0) {/* error occurred */
-        fprintf(stderr, "Fork Failed");
+        cout << stderr << "Fork Failed";
         return 1;
     }
 
     else if (pid == 0) {/* child process */
         pid1 = getpid();
-        printf("\nchild: pid = %d",pid); /* A */
-        printf("\nchild: pid1 = %d",pid1); /* B */
+        cout << "\nchild: pid = " << pid; /* A */
+        cout << "\nchild: pid1 = " << pid1; /* B */
     }
 
     else {/* parent process */
         pid1 = getpid();
-        printf("\nparent: pid = %d",pid); /* C */
-        printf("\nparent: pid1 = %d",pid1); /* D */
+        cout << "\nparent: pid = " << pid; /* C */
+        cout << "\nparent: pid1 = " << pid1; /* D */
         // wait(NULL);
     }
 

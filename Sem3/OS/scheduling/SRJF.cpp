@@ -10,11 +10,11 @@ int main() {
     cout<<"\nEnter the number of Processes: ";
     cin>>n;
     for(i=0; i<n; i++) {
-        cout<<"\nEnter arrival time of process: ";
+        cout<<"Enter arrival time of process: ";
         cin>>a[i];
     }
     for(i=0; i<n; i++) {
-        cout<<"\nEnter burst time of process: ";
+        cout<<"Enter burst time of process: ";
         cin>>b[i];
     }
     for(i=0; i<n; i++)

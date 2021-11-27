@@ -25,6 +25,7 @@ int main() {
       x[i]=b[i];
     
     p[9]=-1;
+    
     for(time=0; count!=n; time++) {
         smallest=9;
         for(i=0; i<n; i++) {
