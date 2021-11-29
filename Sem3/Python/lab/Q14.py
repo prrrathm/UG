@@ -4,19 +4,24 @@
 import os
 os.system("clear")
 
-file1 = open('./Q14File1.txt', 'r')
-file2 = open('./Q14File2.txt', 'w')
-text = file1.readlines()
-type(text)
+name1 = input("Enter name of file to copy from =>")
+name2 = input("Enter name of file to copy data =>")
 
-for i in range(0, len(text)):
-	if(i % 2 != 0):
-		file2.write(text[i])
-		
+try :
+	file1 = open(name1, 'r')
+	file2 = open(name2, 'w')
+	text = file1.readlines()
+	type(text)
 
-file2.close()
-file2 = open('Q14File2.txt', 'r')
-print("Text Copied in File 2 =>\n\n", file2.read())
+	for i in range(0, len(text)):
+		if(i % 2 != 0):
+			file2.write(text[i])
+			
 
-file1.close()
-file2.close()
+	file2.close()
+	file2 = open(name2, 'r')
+	print("Text Copied in File 2 =>\n\n", file2.read())
+
+	file1.close()
+	file2.close()
+except : FileNotFoundError

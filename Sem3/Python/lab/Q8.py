@@ -38,22 +38,22 @@ if __name__  == '__main__' :
     n = int(input('\nenter size of list : '))
     inputList(A,n)
     
-    while(True) :
-        print(
-            '\n-------------------',
-            '\nList - ', A,
-            '\nSelect operation\n',
-            '1. Check if all elements in list are numbers or not\n',
-            '2. Count number of odd values in it (if it is numeric)\n',
-            '3. Display largest String in the list (it is is string)\n',
-            '4. Display list in reverse form\n',
-            '5. Find a specified element in list\n',
-            '6. Remove the specified element from the list\n',
-            '7. Sort the list in descending order\n',
-            '8. Find the common members in 2 lists\n',
-            '9. Exit',
+    print(
+        'List - ', A,
+        '\n-------------------',
+        '\nSelect operation\n',
+        '1. Check if all elements in list are numbers or not\n',
+        '2. Count number of odd values in it (if it is numeric)\n',
+        '3. Display largest String in the list (it is is string)\n',
+        '4. Display list in reverse form\n',
+        '5. Find a specified element in list\n',
+        '6. Remove the specified element from the list\n',
+        '7. Sort the list in descending order\n',
+        '8. Find the common members in 2 lists\n',
+        '9. Exit',
         )
-        choice = int(input('->'))
+    while(True) :
+        choice = int(input('choice ->'))
         if choice == 1 : # a)
             if listisdigit(A) : print('YES list is all digits')
             else : print('NO list is not all digits')
@@ -65,28 +65,31 @@ if __name__  == '__main__' :
         elif choice == 3 : # c)
             if not listisdigit(A) :
                 print('largest string in list : ',max(A, key=len))
-        elif choice == 4 : # d)    
-            print('\nlist before reversing = ',A)
+        elif choice == 4 : # d)
+            print('list before reversing = ',A)
             A.reverse()
             print('list after reversing = ',A)
+            A.reverse()
         elif choice == 5 : # e)
             num = input('Enter element to search in list : ')
             if num in A :
-                print('yes',num,'is present in List.\n')
+                print('yes',num,'is present in List.')
             else :
-                print('no',num,'is not present in List.\n')
+                print('no',num,'is not present in List.')
         elif choice == 6 : # f)
             num = input('Enter element to remove : ')
             if num in A :
                 i = A.index(num)
                 A.pop(i)
+                print("List =",A)
             else :
                 print('element not in list!')
         elif choice == 7 : # g)
                 A.sort(reverse=True)
+                print("List =",A)
         elif choice == 8 :
             B = []
-            n = int(input('\nenter size of second list : '))
+            n = int(input('enter size of second list : '))
             inputList(B,n)
             common = list(set(A).intersection(B))
             print('Common members in both list : ',common)

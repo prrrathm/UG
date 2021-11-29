@@ -7,15 +7,15 @@ def Fibonacci(n) :
     else :
         return Fibonacci(n-1)+Fibonacci(n-2)
 
-def factorial(n) :
+def Factorial(n) :
     assert n > 0
     if n == 1:
         return n
     else :
-        return n * factorial(n-1)
+        return n * Factorial(n-1)
 
 def FandF(n) :
-    return [Fibonacci(n), factorial(n)]
+    return [Fibonacci(n), Factorial(n)]
 
 if __name__ == '__main__' :
     n = int(input('\nn : '))

@@ -20,15 +20,16 @@ def TopStudent(stud) :
     print( max(lis), list(stud)[pos])
     
 
-while(True) :
-    print(
-        'Select dictionary operation : \n',
-        '1. Add new Student\n',
-        '2. View Dictionary\n',
-        '3. View Top Student\n',
-        '4. Exit'
+print(
+    'Select dictionary operation : \n',
+    '1. Add new Student\n',
+    '2. View Dictionary\n',
+    '3. View Top Student\n',
+    '4. Exit'
     )
-    option = input('->')
+
+while(True) :
+    option = input('\nChoice ->')
         
     if option == '1' : 
         try :

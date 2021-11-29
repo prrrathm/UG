@@ -7,7 +7,7 @@ def countletter(txt):
             txtdict[i] += 1
         else :
             txtdict[i] = 1
-    txtdsjdct.pop(' ')
+    txtdict.pop(' ')
     return txtdict
 
 txt = input('\nEnter string : ')

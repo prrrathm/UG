@@ -1,4 +1,5 @@
 def num2set(number) :
+    assert number >= 10 
     numstr = str(number)
     digitset = set()
     

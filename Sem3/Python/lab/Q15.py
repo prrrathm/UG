@@ -14,4 +14,17 @@ class Student :
 
 p1 = Student('Pratham',[12,13,14])
 p2 = Student('Divyam',[14,23,16])
-print(p1.name,p1.marks, Student.maxavg)
+
+name3 = input('Enter Name of Student =>')
+mark3 = []
+for i in range(3) :
+    temp = int(input('Enter marks in subject '+str(i+1)+" =>"))
+    mark3.append(temp)
+    
+p3 = Student(name3,mark3)
+print(
+    "Name","\t Marks\n",
+    p1.name,p1.marks, "\n",
+    p2.name,p2.marks, "\n",
+    p3.name,p3.marks, "\n",
+    "\nMaximum Average marks of class = ",Student.maxavg)

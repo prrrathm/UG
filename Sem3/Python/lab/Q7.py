@@ -34,11 +34,12 @@ def main() :
         '2. Return maximum of three strings.\n',
         '3. Accept a string and replace all vowels with “#”\n',
         '4. Find number of words in the given string.\n',
-        '5. Check whether the string is a palindrome or not.\n'
+        '5. Check whether the string is a palindrome or not.\n',
+        '6. Quit'
         )
 
     while True :
-        choice = int(input('Enter serial number of desired operation : '))
+        choice = int(input('\nEnter serial number of desired operation : '))
         
         if choice == 1 :
             txt = input('Enter string : ')
@@ -64,11 +65,9 @@ def main() :
             if ispalindrome(txt) : print('yes string is palindrome') 
             else : print('no string is not a palindrome')
         
+        elif choice == 6 :
+            exit()
         else :
             print('Invalid Input')
-
-        flag = input('''\nDo you want to continue?(y/n) : ''')
-        if flag == 'n' or flag == 'N' :
-            break
 
 main()

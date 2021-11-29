@@ -63,20 +63,20 @@ def selectionsort(Datalist) :
 if __name__ == '__main__' :
     os.system('clear')
     students = ['Pratham','Dwitya','Tritya','Chatur']
+    print(
+        '\nSelect Operation\n',
+        '| 1->View List ',
+        '| 2->Insert in List ',
+        '| 3->Shuffle List |\n',
+        '| 4->Linear Search ',
+        '| 5->Binary Search ',
+        '| 6-> Bubble Sort |\n',
+        '| 7-> Insertion Sort |',
+        '| 8-> Selection Sort |', 
+        '| 9-> Exit |'
+            )
     while(True) :
-        print(
-            '\nSelect Operation\n',
-            '| 1->View List ',
-            '| 2->Insert in List ',
-            '| 3->Shuffle List |\n',
-            '| 4->Linear Search ',
-            '| 5->Binary Search ',
-            '| 6-> Bubble Sort |\n',
-            '| 7-> Insertion Sort |',
-            '| 8-> Selection Sort |', 
-            '| 9-> Exit |'
-        )
-        operation = int(input('Enter->'))
+        operation = int(input('#Choice->'))
         if (operation == 1) :
             print(students)
         elif (operation == 2) :
@@ -84,19 +84,25 @@ if __name__ == '__main__' :
             students.append(name)    
         elif (operation == 3) :    
             random.shuffle(students)
+            print(students)
         elif (operation == 4) :  
             key = input('Enter name to find : ')
             if linearsearch(students, key) : print('Yes',key,'is in list.') 
             else : print('No',key,'is not in list.')
         elif (operation == 5) :
-            key = input('Enter name to find : ')
-            binarysearch(students,0, len(students)-1, key)  
-        elif (operation == 6) :    
+            key = input('Enter name to find : ')       
+            if binarysearch(students,0, len(students), key) : 
+                print('Yes',key,'is in list.') 
+            else : print('No',key,'is not in list.')
+        elif (operation == 6) :
             bubblesort(students)
+            print(students)
         elif (operation == 7) :    
             insertionsort(students)
+            print(students)
         elif (operation == 8) :    
             selectionsort(students)
+            print(students)
         elif (operation == 9) :    
             exit()
         else :
