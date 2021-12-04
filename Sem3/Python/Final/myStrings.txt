@@ -1,0 +1,7 @@
+Create a file myStrings.txt. 
+Write some strings to this file. 
+Open this file again to count occurences of vowels, consonants, and  special characters like whitespace, '', ., , etc. 
+Display these numbers as histogram. 
+Use dictionaries to store the counts. 
+Use exception if file cannot be opened, read or written to or is empty while counting characters.
+
