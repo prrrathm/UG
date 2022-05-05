@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.21)
+project(Algo_Sem4)
+
+set(CMAKE_CXX_STANDARD 14)
+
+#add_executable(Algo_Sem4 HeapSort.cpp)
+
+add_executable(HeapSort HeapSort.cpp)
+add_executable(InsertionSort InsertionSort.cpp)
+add_executable(MergeSort MergeSort.cpp)
+add_executable(QuickSort QuickSort.cpp)
+add_executable(DepthFirstSearch DepthFirstSearch.cpp)
+add_executable(BreadthFirstSearch BreadthFirstSearch.cpp)
+add_executable(CountingSort CountingSort.cpp)
+add_executable(RadixSort RadixSort.cpp)
+add_executable(primsSpanningTree primsSpanningTree.cpp)
+add_executable(BucketSort BucketSort.cpp)
+add_executable(RandomizedSelect RandomizedSelect.cpp)
+add_executable(KruskalsMST KruskalsMST.cpp)
+add_executable(WeighteIntervalSchedulingALgo WeighteIntervalSchedulingALgo.cpp)
+add_executable(Knapsack Knapsack.cpp)
