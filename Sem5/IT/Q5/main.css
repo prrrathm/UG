@@ -1,33 +1,45 @@
 body {
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-items: center;
+	background-image: url(./img/mesh-1.png);
+	background-size: cover;
+	cursor: pointer;
 }
 
-.buttonContainer{
+.buttonContainer {
 	display: inline-grid;
 	grid-template-columns: auto auto auto;
 }
 
-.buttonContainer div{
+.buttonContainer div {
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
 }
 
-.buttonContainer div button{
+.buttonContainer div button {
 	border: none;
-	background-color: slategray;
+	background-color: #00aa7fa0;
 	padding: 8px 10px;
 	margin: 5px 0px;
 	cursor: pointer;
 	color: #eee;
+	border-radius: 10px;
+	font-size: 26px;
 }
-
-#para{
-	border: 1px dashed #101010;
+.buttonContainer div button:hover {
+	transition: 300ms;
+	transform: scale(1.1,1.1);
+}
+#para {
+	border: 2px solid #101010;
+	border-radius: 10px;
+	background-color: #eeeeee80;
 	font-size: 25px;
-	padding: 5px 8px;
+	padding: 10px 20px;
+	width: 40%;
+	text-align: justify;
 }

@@ -1,0 +1,53 @@
+<!-- 
+Create a form that takes data about a pet. 
+The form must be well designed and should accept the 
+1. pet’s name, 
+2. age, 
+3. weight, 
+4. type, and 
+5. what it likes most. 
+
+At the submission of this form 
+1. create a Pet object in JavaScript filled with these values and 
+2. log that object and equivalent JSON on the console. 
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Practical 6</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="./main.css" />
+	</head>
+	<body>
+		<h1>Enter your Pet's information</h1>
+		<!-- <img src="./dog.gif"> -->
+		<div class="form-container">
+			<form id="pet-form">
+				<label for="name"> Name of your Pet : </label>
+				<input name="name" type="text" placeholder="Pet's Name" />
+				<label for="age"> Age of your Pet : </label>
+				<input name="age" type="number" placeholder="Pet's Age" />
+				<label for="weight"> Weight of your pet </label>
+				<input name="weight" type="weight" placeholder="Pet's Weight (in KG)" />
+				<label for="type"> Type of Pet : </label>
+				<select name="type">
+					<option value="dog">Dog</option>
+					<option value="cat">Cat</option>
+					<option value="turtle">turtle</option>
+					<option value="rabbit">Rabbit</option>
+					<option value="bird">Bird</option>
+				</select>
+				<label>What does it likes most? </label>
+				<input name="favourite" placeholder="favourite" />
+				<div>
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+		<script src="./index.js" async defer></script>
+	</body>
+</html>

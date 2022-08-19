@@ -1,27 +1,20 @@
 function productTable(n) {
-  var table = "<table>";
-  for (var j = 1; j <= 10; j++) {
-    table +=
-      "<tr><td>" +
-      n +
-      "</td><td>x</td><td>" +
-      j +
-      "</td><td>=</td><td>" +
-      n * j +
-      "</td></tr>";
-  }
-  table += "</tabel>";
-  return table;
+	var randomColor = `#` + Math.floor(Math.random() * 16777215).toString(16);
+	console.log(randomColor);
+	var table =
+		`<div style="font-size: ` + 5 * n + `px; color:` + randomColor + `;">`;
+	for (var j = 1; j <= 10; j++) {
+		table += n * j + " ";
+	}
+	table += "</div>";
+	return table;
 }
 
-for (var i = 1; i <= 10; i++) {
-    // setInterval(function(i){
-      document.getElementById("container").innerHTML += productTable(i);
-      console.log(i)
-    // }, 1000);
-}
-// console.log(groupTable());
-
-// setInterval(groupTable, 5000);
-// document.getElementById("container").innerHTML =
-// document.getElementById("container").innerHTML = groupTable();
+var counter = 2;
+var i = setInterval(function () {
+	document.getElementById("container").innerHTML += productTable(counter);
+	counter++;
+	if (counter > 10) {
+		clearInterval(i);
+	}
+}, 500);
