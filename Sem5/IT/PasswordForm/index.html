@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Form Password</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			form{
+				display: inline-flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="loginForm" target="" method="GET">
+			<label>Enter your Username and Password</label>
+			<input type="text" name="username" placeholder="username">
+			<input type="password" name="password" placeholder="password">
+			<input type="submit" value="submit" >
+		</form>
+		<script src="" async defer>
+			// function validateForm(form) {
+				// form.preventDefault()
+				// let x = document.loginForm.password.value;
+				// console.log(form.password.value)
+			// }
+			document.forms.loginForm.submit(function(e) {
+				alert("hello")
+			})
+		</script>
+	</body>
+</html>

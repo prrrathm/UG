@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Oswald&family=Teko:wght@600&display=swap");
+body {
+	/* background-color: #f48800; */
+	background-color: #eee;
+	color: #051821;
+	padding: 20px 40px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: 10px;
+	font-size: 22px;
+	padding: 0px 50px;
+	min-height: 100vh;
+	font-family: "Lora", sans-serif;
+}
+.container {
+	display: flex;
+	gap: 40px;
+	/* background-color: aqua; */
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px 20px;
+}
+.container .img-box {
+	height: 60vh;
+	position: relative;
+}
+.container .img-box img {
+	height: 50vh;
+}
+.container .img-box::before {
+	content: ".";
+	height: 8rem;
+	width: 100rem;
+	background-color: #922222;
+	position: absolute;
+	left: -70rem;
+	bottom: 4rem;
+	border-radius: 100vh;
+	z-index: -1;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+	/* background-color: aquamarine; */
+	/* text-align: center; */
+	width: 100%;
+	font-size: 100px;
+	-webkit-text-stroke: 2px black;
+	color: transparent;
+	font-family: "Teko", sans-serif;
+	/* font-weight: 900; */
+	letter-spacing: 5px;
+}
+.recruitmentForm {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 20px;
+	/* background-color: ; */
+}
+
+.recruitmentForm input {
+	border-radius: 20px;
+	padding: 5px 6px;
+	background-color: transparent;
+}
