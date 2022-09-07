@@ -67,3 +67,8 @@ h1 {
 	padding: 5px 6px;
 	background-color: transparent;
 }
+.recruitmentForm input::placeholder {
+	color: #10101080;
+	/* background-color: #922222; */
+	padding: 1rem 1rem 1rem 0;
+}

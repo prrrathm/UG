@@ -21,18 +21,20 @@ Design a form consisting of all those fields and validate using JavaScript. -->
 		<div class="img-box">
 			<img src="./business-3d-young-people-in-casual-clothes-standing.png">
 		</div>
-		<form class="recruitmentForm" onsubmit="()=>{handleSubmit()}">
-			
+		<form class="recruitmentForm" id="recruitmentForm" onsubmit="()=>{handleSubmit()}">
 			<label for="firstName">First Name</label>
-			<input name="firstName" placeholder="Enter First Name">
+			<input name="firstName" placeholder="Enter First Name" >
 			<label for="lastName">Last Name</label>
-			<input name="lastName" type="text" placeholder="Enter Last Name">
+			<input name="lastName" type="text" placeholder="Enter Last Name" >
 			<label for="phoneNumber">Phone Number</label>
-			<input name="lastName" type="tel" placeholder="Enter Mobile Number">
+			<input name="phoneNumber" type="tel" placeholder="Enter Mobile Number" >
 			<label for="degree">Degree</label>
-			<input name="" type="text" placeholder="Enter name of your Degree">
-			<label for="degree">Experience</label>
-			<input name="" type="number" placeholder="Experience in Years">
+			<input name="degree" type="text" placeholder="Enter name of your Degree" >
+			<label for="experience'">Experience</label>
+			<input name="experience" type="number" placeholder="Experience in Years" >
+			<div>
+				<button type="submit" id="formSubmit">Submit</button>
+			</div>
 		</form>
 	</div>
 	<script src="./index.js" async defer></script>
