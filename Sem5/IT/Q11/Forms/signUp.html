@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Register</title>
+		<link rel="stylesheet" href="../Styles/index.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="formContainer">
+				<div class="form">
+					<div class="formField">
+						<h1 style="text-align: left; font-size: 20px">
+							Welcome to registration desk!
+						</h1>
+
+						<form id="formData">
+							<label for="name">Name</label><br />
+							<input
+								type="text"
+								name="name"
+								required
+								min="4"
+								placeholder="Enter your name"
+							/>
+
+							<br />
+
+							<br />
+							<label for="email">Email</label><br />
+							<input
+								type="email"
+								name="email"
+								required
+								placeholder="Enter your email"
+							/>
+
+							<br />
+
+							<br />
+
+							<label for="designation">Designation</label><br />
+							<select name="designation">
+								<option value="Student">Student</option>
+								<option value="Professor">Professor</option>
+								<option value="As.Professor">As.Professor</option>
+
+								<option value="NonTeachingStaff">NonTeachingStaff</option>
+							</select>
+							<br /><br />
+							<label for="password">Enter Your Password</label><br />
+							<input type="text" name="password" required maxlength="10" />
+
+							<br /><br />
+
+							<div id="signIn">
+								<button
+									type="submit"
+									style="background-color: #423f38; width: 50%; color: white"
+								>
+									SignUp
+								</button>
+							</div>
+							<p>
+								Already a user?
+								<span style="color: rgb(134, 38, 134)"
+									><a href="../Forms/signIn.html">SignIn</a></span
+								>
+							</p>
+							<p id="feedback" style="color: red"></p>
+						</form>
+					</div>
+				</div>
+				<div class="image">
+					<img alt="form" src="../Assets/formImg.jpg" />
+				</div>
+			</div>
+		</div>
+		<script>
+			formData.onsubmit = async (e) => {
+				e.preventDefault();
+
+				const formData = document.querySelector("form");
+				const Data = new FormData(formData);
+				// initialize an empty object
+				const formDataObj = {};
+				await Data.forEach((value, key) => (formDataObj[key] = value));
+				console.log("Object form data ", formDataObj);
+				const response = await fetch("http://localhost:3000/signUp", {
+					method: "POST",
+					body: JSON.stringify(formDataObj),
+					headers: {
+						"Content-Type": "text/plain",
+					},
+				});
+				console.log(response, response.statusText);
+				if (response.statusText == "Created") {
+					console.log("Opening welcome page.");
+					window.open("../index.html", "_self");
+				} else {
+					document.getElementById("feedback").innerText = response.statusText;
+					setTimeout(() => {
+						document.querySelector("form").reset();
+						document.getElementById("feedback").innerText = "";
+					}, 1500);
+				}
+				//  now convert js object to json string
+			};
+		</script>
+	</body>
+</html>

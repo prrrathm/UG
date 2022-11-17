@@ -1,0 +1,52 @@
+table,
+td,
+tr,
+th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td {
+	font-size: larger;
+}
+th {
+	font-size: larger;
+	text-transform: uppercase;
+}
+th,
+td {
+	padding: 10px;
+}
+table {
+	width: 70%;
+}
+h1 {
+	font-size: 38px;
+	text-align: center;
+}
+body {
+	font-size: 16pt;
+}
+button {
+	width: 15%;
+	height: 10%;
+	font-size: 16pt;
+	align-items: center;
+	margin-left: 40%;
+	margin-right: 50%;
+	border-radius: 50px;
+}
+.tdesign {
+	border: 2px solid salmon;
+}
+.heading_h1 {
+	color: red;
+	font-family: courier new;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+.button_style {
+	color: coral;
+	border: 5px solid brown;
+	font-weight: bold;
+	text-decoration: darkred;
+}

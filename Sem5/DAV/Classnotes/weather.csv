@@ -1,0 +1,10 @@
+Season,Weather,Tourist,Labels
+Summer,Pleasant,like,Yes
+Summer,Hot,dislike,Yes
+Summer,Pleasant,like,Yes
+winter,Harsh,like,Yes
+winter,Pleasant,like,No
+autumn,Dry,dislike,Yes
+autumn,Pleasant,dislike,Yes
+autumn,Harsh,NULL,No
+Spring,Pleasant,like,NULL

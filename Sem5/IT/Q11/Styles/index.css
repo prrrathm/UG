@@ -1,0 +1,42 @@
+body{
+    background-image: linear-gradient(to right,#9B9E8F,#423F38);
+}
+.container{
+    
+  
+    position: absolute;
+    left:23%;
+    top:20%;
+  
+    
+}
+.formContainer{
+    display: flex;
+    border-width: 2px;
+    /* justify-content: space-evenly; */
+    height: 70vh;
+    border-color: white;
+    border-radius: 15px;
+}
+img{
+    width: 30vw;
+    height: 70vh;
+    border-radius: 20px;
+}
+.form{
+    background-color: white;
+    width: 30vw;
+    border-radius: 20px;
+}
+.formField{
+    position: relative;
+    left:20%;
+    top:20%;
+}
+input,select{
+    width: 50%;
+}
+#signIn{
+    padding: 3px 2px;
+   
+}

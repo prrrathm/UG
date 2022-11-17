@@ -1,0 +1,11 @@
+Sid,Name,List,DateAdm,Marks,CourseCode,Gender
+S1,Amit Jaiswal,I,01-07-2021,97,C001,Male
+S2,Pradeep Dubey,II,09-07-2021,95,C009,Male
+S3,Rinky Arora,I,04-07-2021,90,C112,Female
+S4,Sonia Shah,IV,01-08-2021,96,C001,Female
+S5,Sushil Negi,III,20-07-2021,96.5,C001,Male
+S6,Neeraj Gaur,II,11-07-2021,94.5,C009,Male
+S7,Preeti Sharma,IV,03-08-2021,89,C112,Female
+S8,Deep Gupta,III,23-07-2021,95.75,C001,Male
+S9,Priya Bansal,II,10-07-2021,93.5,C009,Female
+S10,Anand Ahuja,I,01-07-2021,88.5,C112,Male

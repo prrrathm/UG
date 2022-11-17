@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul>
+			<li class="list-item">one</li>
+			<li class="list-item">two</li>
+			<li class="list-item">three</li>
+			<li class="list-item">four</li>
+		</ul>
+	</body>
+	<script>
+		const ul = document.querySelector("ul");
+		const li = document.createElement("li");
+		ul.append(li);
+		li.innerText = "x-men";
+		li.classList.add("list-item");
+	</script>
+</html>
